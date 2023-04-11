@@ -9,8 +9,8 @@ _**Baoyi Zhang<sup>1</sup>**, Kevin Yao<sup>2</sup>, Min Xu<sup>3</sup>, Jia Wu<
 [Requirements](#requirements)  
 [Overview](#overview)  
 [Preprocess](#preprocess)  
-[Training and Test](#training)
-[Cite](#cite)
+[Training and Test](#training)</br>
+[Cite](#cite)  
 
 
 <a name="requirements"></a>
