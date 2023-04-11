@@ -9,7 +9,8 @@ _**Baoyi Zhang<sup>1</sup>**, Kevin Yao<sup>2</sup>, Min Xu<sup>3</sup>, Jia Wu<
 [Requirements](#requirements)  
 [Overview](#overview)  
 [Preprocess](#preprocess)  
-[Training and Test](#training)  
+[Training and Test](#training)
+[Cite](#cite)
 
 
 <a name="requirements"></a>
@@ -84,4 +85,19 @@ $ python ./src/train_EBV.py --data <input data path> --mpath <model path> --lr 0
 * Run the ```test_EBV.py``` to test the EBV model
 ```
 $ python ./src/test_EBV.py --data <input data path> --mpath <model path>
+```
+<a name="cite"></a>
+### Cite
+```bibtex
+@article{zhang2021deep,
+  title={Deep learning predicts EBV status in gastric cancer based on spatial patterns of lymphocyte infiltration},
+  author={Zhang, Baoyi and Yao, Kevin and Xu, Min and Wu, Jia and Cheng, Chao},
+  journal={Cancers},
+  volume={13},
+  number={23},
+  pages={6002},
+  year={2021},
+  publisher={Multidisciplinary Digital Publishing Institute}
+}
+
 ```
