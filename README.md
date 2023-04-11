@@ -27,12 +27,12 @@ This repository provides the codes for training and test the EBV infection detec
 <a name="preprocess"></a>
 ### Preprocess
 
-Run the xxx.py to cut large whole slide images into small tiles with 512\*512 pixels. 
+* Run the xxx.py to cut large whole slide images into small tiles with 512\*512 pixels. 
 ```
 $ python xxx.py 
 ```
 
-Run the xxx.py to perform color normalizarion of all tiles using xxx methods. 
+* Run the xxx.py to perform color normalizarion of all tiles using xxx methods. 
 ```
 $ python xxx.py 
 ```
@@ -40,7 +40,7 @@ $ python xxx.py
 <a name="training"></a>
 ### Training and Test
 #### Tumor vs. normal model
-Run the train_tumor.py to train the tumor vs. normal model
+* Run the train_tumor.py to train the tumor vs. normal model
 ```
 $ python ./src/train_tumor.py --data <input data path> --mpath <model path> --lr 0.0001 --l2 0.000005 --non_improve 10 --epoch 150
 ```
@@ -56,7 +56,7 @@ $ python ./src/train_tumor.py --data <input data path> --mpath <model path> --lr
 
 ```epoch```: Maximum epoches of training
 
-Run the test_tumor.py to test the tumor vs. normal model
+* Run the test_tumor.py to test the tumor vs. normal model
 ```
 $ python ./src/test_tumor.py --data <input data path> --mpath <model path>
 ```
@@ -65,12 +65,12 @@ $ python ./src/test_tumor.py --data <input data path> --mpath <model path>
 ```mpath```: The path of the trained model
 
 #### EBV model
-Run the train_EBV.py to train the EBV model
+* Run the train_EBV.py to train the EBV model
 ```
 $ python ./src/train_EBV.py --data <input data path> --mpath <model path> --lr 0.000001 --l2 0.0005 --non_improve 5 --epoch 150
 ```
 
-Run the test_EBV.py to test the EBV model
+* Run the test_EBV.py to test the EBV model
 ```
 $ python ./src/test_EBV.py --data <input data path> --mpath <model path>
 ```
