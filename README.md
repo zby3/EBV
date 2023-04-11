@@ -16,8 +16,13 @@ _**Baoyi Zhang<sup>1</sup>**, Kevin Yao<sup>2</sup>, Min Xu<sup>3</sup>, Jia Wu<
 ### Requirements
 
 * python 3.7
+* numpy >= 1.21.2
+* pandas >= 0.25.1
+* pillow >= 8.3.1
 * openslides >= 3.3
 * torch >= 1.9.1
+* staintools 2.1.2
+* spam 0.5.3.3
 
 <a name="overview"></a>
 ### Overview
