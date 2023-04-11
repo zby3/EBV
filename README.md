@@ -28,7 +28,7 @@ _**Baoyi Zhang<sup>1</sup>**, Kevin Yao<sup>2</sup>, Min Xu<sup>3</sup>, Jia Wu<
 <a name="overview"></a>
 ### Overview
 
-This repository provides the codes for training and test the EBV infection detection model in the above article. First, a tumor vs. normal model was trained to classify each images into tumor or normal. Then, EBV prediction models were trained seperately on tumor and normal images. 
+This repository provides the codes for training and test the EBV infection detection model in our [paper](https://www.mdpi.com/2072-6694/13/23/6002). First, a tumor vs. normal model was trained to classify each images into tumor or normal. Then, EBV prediction models were trained seperately on tumor and normal images. 
 ```src``` souce code
 
 <a name="preprocess"></a>
