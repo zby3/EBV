@@ -23,7 +23,7 @@ _**Baoyi Zhang<sup>1</sup>**, Kevin Yao<sup>2</sup>, Min Xu<sup>3</sup>, Jia Wu<
 ### Overview
 
 This repository provides the codes for training and test the EBV infection detection model in the above article. First, a tumor vs. normal model was trained to classify each images into tumor or normal. Then, EBV prediction models were trained seperately on tumor and normal images. 
-
+```src``` souce code
 <a name="preprocess"></a>
 ### Preprocess
 
@@ -40,22 +40,37 @@ $ python xxx.py
 <a name="training"></a>
 ### Training and Test
 #### Tumor vs. normal model
-Run the xxx.py to train the tumor vs. normal model
+Run the train_tumor.py to train the tumor vs. normal model
 ```
-$ python xxx.py 
+$ python ./src/train_tumor.py --data <input data path> --mpath <model path> --lr 0.0001 --l2 0.000005 --non_improve 10 --epoch 150
 ```
+```data```: The path for input data
 
-Run the xxx.py to test the tumor vs. normal model
+```mpath```: The path to save the model
+
+```lr```: Learning rate
+
+```l2```: L2 regularization
+
+```non_improve```: Early stop the training process when the loss in validation set doesn't decrease for specific epochs
+
+```epoch```: Maximum epoches of training
+
+Run the test_tumor.py to test the tumor vs. normal model
 ```
-$ python xxx.py 
+$ python ./src/test_tumor.py --data <input data path> --mpath <model path>
 ```
+```data```: The path for input data
+
+```mpath```: The path of the trained model
+
 #### EBV model
-Run the xxx.py to train the EBV model
+Run the train_EBV.py to train the EBV model
 ```
-$ python xxx.py 
+$ python ./src/train_EBV.py --data <input data path> --mpath <model path> --lr 0.000001 --l2 0.0005 --non_improve 5 --epoch 150
 ```
 
-Run the xxx.py to test the EBV model
+Run the test_EBV.py to test the EBV model
 ```
-$ python xxx.py 
+$ python ./src/test_EBV.py --data <input data path> --mpath <model path>
 ```
