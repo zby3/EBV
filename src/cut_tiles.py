@@ -7,7 +7,7 @@ import pandas as pd
 from tqdm import tqdm
 
 # load patient ID with EBV data
-myinf = "/byz/EBV/Cao2016_SciRep_SupTab1_TCGA_Virus.txt"
+myinf = "/byz/EBV/TCGA_Virus.txt"
 info = pd.read_csv(myinf, sep="\t")
 info = info[info["Cancer"] == "STAD"]
 ID = set(df['Sample'].apply(lambda x: x[0:12]))

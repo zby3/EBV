@@ -1,31 +1,33 @@
+import os
 import staintools
 import glob
 from PIL import Image
 import shutil
-myinf1="/work/07034/byz/maverick2/EBV/Ref.png"
+from tqdm import tqdm
+import argparse
+
+parser.add_argument('--input', type=str,help='input path')
+parser.add_argument('--ref', type=str,help='Reference image path')
+parser.add_argument('--output', type=str,help='output path')
+args = parser.parse_args()
+
+myinf1=args.ref
 target = staintools.read_image(myinf1)
 normalizer = staintools.StainNormalizer(method='macenko')
 normalizer.fit(target)
-mydir='/work/07034/byz/maverick2/EBV/TCGA_STAD_norma_tiles/*.png'
+mydir=os.path.join(args.input,'*.png')
 myinf2=glob.glob(mydir)
-nordir="/work/07034/byz/maverick2/EBV/TCGA_STAD_normalized"
-processed="/work/07034/byz/maverick2/EBV/TCGA_STAD_norm_finished"
-unprocessed="/work/07034/byz/maverick2/EBV/TCGA_STAD_norm_failed"
-for i in myinf2:
+nordir=args.output
+for i in tqdm(myinf2):
     try:
         to_transform = staintools.read_image(i)
         transformed = normalizer.transform(to_transform)
         Im = Image.fromarray(transformed)
         Im = Im.resize((224, 224))
-        outf = '/'.join([nordir, i[52:]])
+        outf = os.path.join(nordir, i.split('/')[-1])
         Im.save(outf, "PNG", quality=100)
-        outfile = '/'.join([processed, i[52:]])
-        shutil.move(i, outfile)
-        print(i[52:], "is normalized")
     except:
-        outfile = '/'.join([unprocessed, i[52:]])
-        shutil.move(i, outfile)
-        print(i[52:], "is failed to normalized")
+        print(i.split('/')[-1], "is failed to normalized")
 
 
 
