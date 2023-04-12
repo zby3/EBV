@@ -5,7 +5,7 @@ import torchvision.datasets as datasets
 import torchvision.models as models
 import torch.nn as nn
 import numpy as np
-from ..utils import val, pat_auc
+from ..utils.helper import val, pat_auc
 import argparse
 
 parser.add_argument('--data', type=str,help='input path')
