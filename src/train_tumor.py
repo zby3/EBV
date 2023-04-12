@@ -4,7 +4,7 @@ import torchvision.transforms as transforms
 import torchvision.datasets as datasets
 import torchvision.models as models
 import torch.nn as nn
-from ..utils import train, val
+from ..utils.helper import train, val
 import argparse
 
 parser.add_argument('--data', type=str,help='input path')
