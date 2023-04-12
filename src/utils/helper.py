@@ -24,7 +24,7 @@ def train(model,train_set,optimizer,criterion,device):
         optimizer.step()
         # Add the loss to the training set's running loss
         train_loss += loss.item()*labels.size(0)
-        train_loss /= len(train_set)
+    train_loss /= len(train_set)
     return model, train_loss
 
 def val(model,val_set,criterion,device):
