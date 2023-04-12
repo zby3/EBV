@@ -11,7 +11,7 @@ from PIL import Image
 import numpy as np
 from sklearn.metrics import roc_curve
 from sklearn.metrics import auc
-from ..utils import train, val
+from ..utils.helper import train, val
 import argparse
 
 parser.add_argument('--data', type=str,help='input path')
